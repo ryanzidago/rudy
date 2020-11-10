@@ -56,4 +56,8 @@ defmodule Rudy.HTTP do
   defp message_body(request) do
     {request, ""}
   end
+
+  def ok(body) do
+    "HTTP/1.1 200 OK\r\n" <> "\r\n" <> body
+  end
 end
