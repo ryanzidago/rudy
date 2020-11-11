@@ -50,5 +50,5 @@ defmodule Rudy.HTTP do
 
   def ok(body), do: "HTTP/1.1 200 OK\r\n" <> "\r\n" <> body
 
-  def get(uri), do: "GET" <> uri <> " HTTP/1.1\r\n" <> "\r\n"
+  def get(uri), do: "GET " <> uri <> " HTTP/1.1\r\n" <> "\r\n"
 end
