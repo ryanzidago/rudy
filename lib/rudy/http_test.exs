@@ -17,7 +17,7 @@ defmodule Rudy.HTTPTest do
 
   describe "get/1" do
     test "generates an HTTP GET request" do
-      assert "GET" <> "/index.html" <> " HTTP/1.1\r\n" <> "\r\n" = HTTP.get("/index.html")
+      assert "GET " <> "/index.html" <> " HTTP/1.1\r\n" <> "\r\n" = HTTP.get("/index.html")
     end
   end
 end
