@@ -1,6 +1,16 @@
 defmodule Rudy.Server do
   alias Rudy.HTTP
 
+  def start(port) do
+    Process.register(spawn_link(__MODULE__, :init, [port]), __MODULE__)
+  end
+
+  def stop do
+    __MODULE__
+    |> Process.whereis()
+    |> Process.exit("time to die.")
+  end
+
   def init(port) do
     case :gen_tcp.listen(port, [:list, active: false, reuseaddr: true]) do
       {:ok, listen_socket} ->
@@ -17,6 +27,7 @@ defmodule Rudy.Server do
     case :gen_tcp.accept(listen_socket) do
       {:ok, client} ->
         request(client)
+        handler(listen_socket)
 
       {:error, error} ->
         error
