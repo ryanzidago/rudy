@@ -1,1 +1,1 @@
-alias Rudy.{HTTP, Server}
+alias Rudy.{HTTP, Server, Benchmark}
