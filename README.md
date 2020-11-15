@@ -11,6 +11,7 @@ On Lenovo ThinkPad T470s, with the following hardware specs:
   * capacity: 3500MHz
   * width: 64 bits
   * clock: 100MHz
+  * 4 cores
 
 It take on average, 0.313 seconds for the HTTP server to handle 100 requests.
 
@@ -21,5 +22,6 @@ On Aspire A515-52G, with the following hardware specs:
   * capacity: 4005MHz
   * width: 64 bits
   * clock: 100MHz
+  * 8 cores
 
 It takes on average, 0.354 seconds for the HTTP server to handle 100 requests.
