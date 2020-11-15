@@ -7,11 +7,8 @@ defmodule Rudy.Benchmark do
   end
 
   def do_benchmark(host, port) do
-    start = :erlang.system_time(:micro_seconds)
-    run(100, host, port)
-    finish = :erlang.system_time(:micro_seconds)
-
-    IO.inspect((finish - start) / 1_000_000, label: "seconds")
+    {time, _} = :timer.tc(fn -> run(100, host, port) end)
+    IO.inspect(time / 1_000_000, label: "seconds")
   end
 
   def avg(list) do
